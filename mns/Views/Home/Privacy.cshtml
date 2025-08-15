@@ -4,3 +4,13 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<div id="root"></div>
+
+@section Scripts {
+    <environment names="Development">
+        <script type="module" src="http://localhost:3000/src/pages/home/privacy.jsx"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="module" src="~/react/pages/home/privacy.js"></script>
+    </environment>
+}

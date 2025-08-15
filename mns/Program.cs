@@ -1,3 +1,5 @@
+using Vite.AspNetCore;
+
 namespace mns
 {
     public class Program
@@ -8,6 +10,7 @@ namespace mns
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddViteServices();
 
             var app = builder.Build();
 
@@ -17,6 +20,10 @@ namespace mns
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+            }
+            else
+            {
+                app.UseViteDevelopmentServer();
             }
 
             app.UseHttpsRedirection();

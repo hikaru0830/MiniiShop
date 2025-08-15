@@ -5,4 +5,15 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div id="root"></div>
 </div>
+
+@section Scripts{
+    <environment names="Development">
+        <script type="module" src="http://localhost:3000/src/pages/home/index.jsx"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="module" src="~/react/pages/home/index.js"></script>
+    </environment>
+}
+
